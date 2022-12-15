@@ -1,2 +1,2 @@
 # spyshell
-a customized shell for fans of spiderman 
+A customized shell for fans of spiderman 
