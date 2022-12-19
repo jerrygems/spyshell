@@ -85,7 +85,19 @@ do
 	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
         echo -n -e "${purple}"
         tmux
-        echo -n -e "${nc}"            
+        echo -n -e "${nc}"         
+	elif [[ ${cmd} == "spylistner" ]]
+	then
+		echo "spylistner will be here" | figlet
+	elif [[ ${cmd} == "COT" ]]
+	then
+		echo "chat over terminal" | figlet
+	elif [[ ${cmd} == "bash-compline" ]]
+	then
+		echo "bash completion without tab" | figlet
+	elif [[ ${cmd} == "koth setup" ]]
+	then
+		echo "starting koth setup" | figlet
 	elif [[ ${cmd} ]]
 	then
 	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
