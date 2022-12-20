@@ -80,11 +80,11 @@ do
 	    figlet -f small.flf "good bye $(whoami)"
 	    exit
 	    echo -n -e "${nc}"
-	elif [[ ${cmd} == "edit" ]]
+	elif [[ ${cmd} == "grabip" ]]
 	then
 	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
-        echo -n -e "${purple}"
-        tmux
+        echo -n -e "${boldRED}"
+        ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
         echo -n -e "${nc}"         
 	elif [[ ${cmd} == "spylistner" ]]
 	then
@@ -98,11 +98,16 @@ do
 	elif [[ ${cmd} == "koth setup" ]]
 	then
 		echo "starting koth setup" | figlet
+#koth automation
+	elif [[ ${cmd} == "hello-friend" ]]
+	then
+		read -e -r -p "enter path of ovpn file : " path
+		nohup sudo openvpn ${path} &>/dev/null &
 	elif [[ ${cmd} ]]
 	then
 	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
         echo -n -e "${purple}"
-        eval "${cmd}" 
+        eval "${cmd}"
         echo -n -e "${nc}"            
 	fi
 	
