@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#work in progress of this script haha
 elif [[ ${cmd} == "grabip" ]]
 then
     echo -n -e "${purple}"
