@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "<----------installing in background, Have some popcorns till then---------->"
-run="sudo apt install nyancat && sudo apt install sl && sudo apt install cmatrix && sudo apt install figlet" 
+run="sudo apt install nyancat && sudo apt install sl && sudo apt install cmatrix && sudo apt install figlet && sudo apt install rlwrap" 
 eval ${run} &> /dev/null &
 
 pid=$!
@@ -14,4 +14,3 @@ echo -n ">"
 echo ""
 echo "<----------thanks for having patience---------->"
 
-on 
