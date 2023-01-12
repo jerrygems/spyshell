@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 #
 
 
@@ -14,13 +14,23 @@ lightBLUE='\033[1;34m'
 nc='\033[0m'
 
 
-#rc
 
+#rc
+shopt -s checkwinsize
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 #main program
 
+#confirm_exit function
+trap 'confirm_exit' 2
+confirm_exit(){
+    read -r -p "Are you sure you want to exit? (y/n) " confirm
+    if [ "$confirm" = "y" ]; then
+        echo "Exiting the script"
+        exit
+    fi
+}
 spy(){
     source asciivars.sh
     while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
@@ -33,12 +43,11 @@ while :
 do
 	
 	#easy life things
-	
-		
+
 	name=$(whoami)
 	prompt=$'\033[1;33m;-)\033[0m\033[1;31m'${name}$'\033[0m\033[1;34m@'$(hostname)$'\033[0m\033[1;32m>>\033[0m\033[1;31m🕸️ \033[0m';
 	echo -n -e "${blue}"
-	read -r -e -p "${prompt} " cmd
+	read -i -e -p "${prompt} " cmd
 	history -s ${cmd}
 	echo -n -e "${nc}"
 
@@ -53,6 +62,7 @@ do
 	    spy
 	    figlet -f small.flf "${cmd} $(whoami)"
 	    echo -n -e "${nc}"
+
 	elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
 	then
 		source asciivars.sh
@@ -62,14 +72,19 @@ do
 	elif [[ ${cmd} == "time" ]]
 	then
 	    echo -n -e "${purple}"
-	    date | awk '{print $5,$6,$7}' | figlet
+	    date | awk '{print $4,$5,$6}' | figlet
+	    echo -n -e "${nc}"
+	elif [[ ${cmd} == "date" ]]
+	then
+	    echo -n -e "${purple}"
+	    date | awk '{print $3,$2,$7}' | figlet
 	    echo -n -e "${nc}"
 	elif [[ ${cmd} == "whoami" ]]
 	then
 	    echo -n -e "${purple}"
 	    ${cmd} | figlet
 	    echo -n -e "${nc}"
-    elif [[ ${cmd} == "hostname" ]]
+    	elif [[ ${cmd} == "hostname" ]]
 	then
 	    echo -n -e "${purple}"
 	    ${cmd} | figlet
@@ -102,7 +117,7 @@ do
 	elif [[ ${cmd} == "hello-friend" ]]
 	then
 		read -e -r -p "enter path of ovpn file : " path
-		nohup sudo openvpn ${path} &>/dev/null &
+		nohup sudo openvpn ${path} 2>/dev/null &
 	elif [[ ${cmd} ]]
 	then
 	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
