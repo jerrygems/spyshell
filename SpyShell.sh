@@ -16,13 +16,15 @@ do
 		h=${OPTARG}
 		if [[ ( ${h} == "help" ) || ( ${h} == "h" ) ]]
 		then
-			echo -e """${yellow}
+			echo -e """${blue}Usage : It's a shell all you needa do is just execute the SpyShell.sh${nc}
+${yellow}
 SPYSHELL is a fancy interactive shell and can be used as a troll shell in ctfs
 features : 1. It uses figlet to make it look fancy 
 		   2. It has support of tmux themes
 		   3. It works cool on tmux
 		   
 NOTE : It requires to install some tools to perform well${nc}
+
 ${boldRED}
 QUOTE FROM MR.R0B0T:
 	\"LIFE IS SO MUCH BETTER,
@@ -47,4 +49,4 @@ to use spyshell just execute the file without any flag${nc}
 	esac
 done
 
-./Spy_ShellScript.sh
+rlwrap ./Spy_ShellScript.sh
