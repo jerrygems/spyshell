@@ -1,4 +1,4 @@
-# a fancy interactive shell based on spiderverse theme
+# A fancy interactive shell based on spiderverse theme
 ## Setting up
 ### <i>git clone https://github.com/jerrygems/spyshell.git</i>
 ![a1](https://user-images.githubusercontent.com/100356532/212123598-748e311f-584d-4ebf-a8ba-23740347a8b9.png)
