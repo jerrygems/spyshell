@@ -17,6 +17,8 @@ nc='\033[0m'
 
 #rc
 shopt -s checkwinsize
+set -o vi
+set -o emacs
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
