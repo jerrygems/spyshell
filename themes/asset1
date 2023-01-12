@@ -1,0 +1,13 @@
+#/bin/bash
+tmux send-keys -t 0 "while :; do date | figlet ; sleep 1; clear; done"
+tmux send-keys -t 0 "" Enter
+tmux send-keys -t 1 "tmux select-pane -t 1 ;watch -d 'cat king.txt | figlet';tmux select-pane -t 4;"
+tmux send-keys -t 1 "" Enter
+tmux send-keys -t 2 "tmux select-pane -t 2 ;htop;tmux select-pane -t 5;"
+tmux send-keys -t 2 "" Enter
+tmux send-keys -t 3 "tmux select-pane -t 3 ;cmatrix;"
+tmux send-keys -t 3 "" Enter
+tmux send-keys -t 4 "tmux select-pane -t 4 ;cmus;tmux select-pane -t 5;"
+tmux send-keys -t 4 "" Enter
+tmux send-keys -t 5 "tmux select-pane -t 5 ;lyrics"
+tmux send-keys -t 5 "" Enter

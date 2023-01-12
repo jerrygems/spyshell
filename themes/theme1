@@ -1,0 +1,12 @@
+#/bin/bash
+tmux send-keys -t 0 "tmux split-window -h '-l 90';tmux select-pane -t 1" Enter
+tmux send-keys -t 0 "tmux select-pane -t 0; tmux split-window -v '-l 34';tmux select-pane -t 2" Enter
+tmux send-keys -t 0 "tmux select-pane -t 1; tmux split-window -v '-l 25';tmux select-pane -t 3" Enter
+tmux send-keys -t 0 "tmux select-pane -t 3; tmux split-window -v '-l 10';tmux select-pane -t 4" Enter
+tmux send-keys -t 0 "tmux select-pane -t 3; tmux split-window -v '-l 8';tmux select-pane -t 5" Enter
+
+sleep 1
+tmux send-keys -t 4 "tmux select-pane -t 4; ./asset1;"
+tmux send-keys -t 4 "" Enter
+clear
+
