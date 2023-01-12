@@ -54,53 +54,56 @@ do
 	#figlet art
 	if [[ ${cmd} == "hello" ]]
 	then
-		
-	    echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
-	    echo -n -e "${boldRED}"
-	    spy
-	    spy
-	    spy
-	    figlet -f small.flf "${cmd} $(whoami)"
-	    echo -n -e "${nc}"
-
+	    	echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
+	    	echo -n -e "${boldRED}"
+	    	spy
+	    	spy
+	    	spy
+	    	figlet -f small.flf "${cmd} $(whoami)"
+	    	echo -n -e "${nc}"
 	elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
 	then
 		source asciivars.sh
 		echo -n -e "${boldRED}"
 		echo -e "${sixth}"
 		echo -n -e "${nc}"
+	elif [[ ${cmd} == "initfun" || ${cmd} == "InitFun" || ${cmd} == "ini" || ${cmd} == "INITFUN" ]]
+        then
+                echo -n -e "${purple}"
+		eval ./initfun.sh
+                echo -n -e "${nc}"
 	elif [[ ${cmd} == "time" ]]
 	then
-	    echo -n -e "${purple}"
-	    date | awk '{print $4,$5,$6}' | figlet
-	    echo -n -e "${nc}"
+	    	echo -n -e "${purple}"
+	    	date | awk '{print $4,$5,$6}' | figlet
+	    	echo -n -e "${nc}"
 	elif [[ ${cmd} == "date" ]]
 	then
-	    echo -n -e "${purple}"
-	    date | awk '{print $3,$2,$7}' | figlet
-	    echo -n -e "${nc}"
+	    	echo -n -e "${purple}"
+	    	date | awk '{print $3,$2,$7}' | figlet
+	    	echo -n -e "${nc}"
 	elif [[ ${cmd} == "whoami" ]]
 	then
-	    echo -n -e "${purple}"
-	    ${cmd} | figlet
-	    echo -n -e "${nc}"
+	    	echo -n -e "${purple}"
+	    	${cmd} | figlet
+	    	echo -n -e "${nc}"
     	elif [[ ${cmd} == "hostname" ]]
 	then
-	    echo -n -e "${purple}"
-	    ${cmd} | figlet
-	    echo -n -e "${nc}"
+	    	echo -n -e "${purple}"
+	    	${cmd} | figlet
+	    	echo -n -e "${nc}"
 	elif [[ ${cmd} == "exit" || ${cmd} == "bye" ]]
 	then    
-	    echo -n -e "${boldRED}"
-	    figlet -f small.flf "good bye $(whoami)"
-	    exit
-	    echo -n -e "${nc}"
+	    	echo -n -e "${boldRED}"
+	    	figlet -f small.flf "good bye $(whoami)"
+	    	exit
+	    	echo -n -e "${nc}"
 	elif [[ ${cmd} == "grabip" ]]
 	then
-	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
-        echo -n -e "${boldRED}"
-        ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
-        echo -n -e "${nc}"         
+	    	#print colored output2>/dev/null && ${cmd} 2>spyshell.log 
+        	echo -n -e "${boldRED}"
+        	ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
+        	echo -n -e "${nc}"         
 	elif [[ ${cmd} == "spylistner" ]]
 	then
 		echo "spylistner will be here" | figlet
@@ -120,10 +123,10 @@ do
 		nohup sudo openvpn ${path} 2>/dev/null &
 	elif [[ ${cmd} ]]
 	then
-	    #print colored output2>/dev/null && ${cmd} 2>spyshell.log 
-        echo -n -e "${purple}"
-        eval "${cmd}"
-        echo -n -e "${nc}"            
+	    	#print colored output2>/dev/null && ${cmd} 2>spyshell.log 
+        	echo -n -e "${purple}"
+        	eval "${cmd}"
+        	echo -n -e "${nc}"            
 	fi
 	
 	
