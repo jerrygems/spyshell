@@ -1,6 +1,6 @@
 #!/bin/bash -i
 #
-
+dontRemoveThisVar="SpyShell"
 
 #color variables
 red='\033[0;31m'
@@ -34,7 +34,8 @@ confirm_exit(){
     fi
 }
 spy(){
-    source asciivars.sh
+    FILE=$(find / -name asciivars.sh -exec grep -q "SpyShell" {} \; -print -quit)
+    source ${FILE}
     while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
 
 }
@@ -71,7 +72,8 @@ do
                 echo -n -e "${nc}"
         elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
         then
-                source asciivars.sh
+                FILE=$(find / -name asciivars.sh -exec grep -q "SpyShell" {} \; -print -quit)
+                source ${FILE}
                 echo -n -e "${boldRED}"
                 echo -e "${sixth}"
                 echo -n -e "${nc}"
