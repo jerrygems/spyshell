@@ -20,3 +20,6 @@
 
 ### <i>help</i>
 ![a5](https://user-images.githubusercontent.com/100356532/212124715-817a8ce8-7921-4b6c-96c1-dea7f0090beb.png)
+
+
+### It may work weired without rlwrap 0.46.1
