@@ -1,4 +1,3 @@
-<div style="width:100%; height:100%; background:black; z-index:-999;"></div>
 # A fancy interactive shell based on spiderverse theme
 ## Setting up
 ### <i>git clone https://github.com/jerrygems/spyshell.git</i>
