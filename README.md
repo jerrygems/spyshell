@@ -2,10 +2,10 @@
 
 <hr style="height:2px;border-width:0;color:grey;background-color:grey">
 
-## Setting up
+## Setting up /,-)
 <hr style="height:1.5px;border-width:0;color:gray;background-color:grey">
 
-### <i>git clone https://github.com/jerrygems/spyshell.git :-)</i>
+### <i>git clone https://github.com/jerrygems/spyshell.git</i>
 ![a1](https://user-images.githubusercontent.com/100356532/212123598-748e311f-584d-4ebf-a8ba-23740347a8b9.png)
 <br>
 <hr style="height:1px;border-width:0;color:gray;background-color:grey">
