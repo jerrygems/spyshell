@@ -6,6 +6,7 @@
 <-------------------------------------------------------------------->
 ### <i>permissions</i>
 <b>chmod +x Spy_ShellScript.sh && chmod +x SpyShell.sh && chmod +x initfun.sh</b>
+<br>
 ![a2](https://user-images.githubusercontent.com/100356532/212123716-75447f15-b1ab-4fd1-b7be-5547842c7169.png)
 <br>
 <-------------------------------------------------------------------->
