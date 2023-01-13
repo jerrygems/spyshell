@@ -1,6 +1,7 @@
 #!/bin/bash -i
 #
 dontRemoveThisVar="SpyShell"
+source ./asciivars
 #color variables
 red='\033[0;31m'
 boldRED='\033[1;31m'
@@ -100,32 +101,32 @@ do
         elif [[ ${cmd} == "grabip" ]]
         then
             #print colored output2>/dev/null && ${cmd} 2>spyshell.log
-        echo -n -e "${boldRED}"
-        ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
-        echo -n -e "${nc}"
+            echo -n -e "${boldRED}"
+            ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
+            echo -n -e "${nc}"
         elif [[ ${cmd} == "spylistner" ]]
         then
-                echo "spylistner will be here" | figlet
+            echo "spylistner will be here" | figlet
         elif [[ ${cmd} == "COT" ]]
         then
-                echo "chat over terminal" | figlet
+            echo "chat over terminal" | figlet
         elif [[ ${cmd} == "bash-compline" ]]
         then
-                echo "bash completion without tab" | figlet
+            echo "bash completion without tab" | figlet
         elif [[ ${cmd} == "koth setup" ]]
         then
-                echo "starting koth setup" | figlet
+            echo "starting koth setup" | figlet
 #koth automation
         elif [[ ${cmd} == "hello-friend" ]]
         then
-                read -e -r -p "enter path of ovpn file : " path
-                nohup sudo openvpn ${path} 2>/dev/null &
+            read -e -r -p "enter path of ovpn file : " path
+            nohup sudo openvpn ${path} 2>/dev/null &
         elif [[ ${cmd} ]]
         then
             #print colored output2>/dev/null && ${cmd} 2>spyshell.log
-        echo -n -e "${purple}"
-        eval "${cmd}"
-        echo -n -e "${nc}"
+            echo -n -e "${purple}"
+            eval "${cmd}"
+            echo -n -e "${nc}"
         fi
 
 
