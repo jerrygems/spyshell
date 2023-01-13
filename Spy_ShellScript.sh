@@ -68,7 +68,7 @@ do
         elif [[ ${cmd} == "initfun" || ${cmd} == "InitFun" || ${cmd} == "ini" || ${cmd} == "INITFUN" ]]
         then
                 echo -n -e "${purple}"
-                eval ./initfun.sh
+                eval FILE=$(find /home /root /usr/bin -name initfun.sh -exec grep -q "SpyShell" {} \; -print -quit)
                 echo -n -e "${nc}"
         elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
         then
