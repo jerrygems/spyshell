@@ -48,5 +48,5 @@ to use spyshell just execute the file without any flag${nc}
                 ;;
         esac
 done
-
-rlwrap ./Spy_ShellScript.sh
+FILE=$(find / -name Spy_ShellScript.sh -exec grep -q "SpyShell" {} \; -print -quit)
+rlwrap ${FILE}
