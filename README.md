@@ -1,3 +1,4 @@
+<div style="width:100%; height:100%; background:black; z-index:-999;"></div>
 # A fancy interactive shell based on spiderverse theme
 ## Setting up
 ### <i>git clone https://github.com/jerrygems/spyshell.git</i>
@@ -5,6 +6,7 @@
 <br>
 <-------------------------------------------------------------------->
 ### <i>permissions</i>
+<b>chmod +x Spy_ShellScript.sh && chmod +x SpyShell.sh && chmod +x initfun.sh</b>
 ![a2](https://user-images.githubusercontent.com/100356532/212123716-75447f15-b1ab-4fd1-b7be-5547842c7169.png)
 <br>
 <-------------------------------------------------------------------->
