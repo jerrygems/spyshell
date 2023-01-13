@@ -3,21 +3,21 @@
 ### <i>git clone https://github.com/jerrygems/spyshell.git</i>
 ![a1](https://user-images.githubusercontent.com/100356532/212123598-748e311f-584d-4ebf-a8ba-23740347a8b9.png)
 <br>
-<hr>
+<hr></hr>
 ### <i>permissions</i>
 <b>chmod +x Spy_ShellScript.sh && chmod +x SpyShell.sh && chmod +x initfun.sh</b>
 <br>
 ![a2](https://user-images.githubusercontent.com/100356532/212123716-75447f15-b1ab-4fd1-b7be-5547842c7169.png)
 <br>
-<hr>
+<hr></hr>
 ### <i>installing dependencies</i>
 ![a3](https://user-images.githubusercontent.com/100356532/212123954-a6457303-6d8a-4c3b-b839-35cc70571542.png)
 <br>
-<hr>
+<hr></hr>
 ### <i>executing shell</i>
 ![a4](https://user-images.githubusercontent.com/100356532/212124094-02709940-e78f-4978-a9c5-0a9103f718fd.png)
 <br>
-<hr>
+<hr></hr>
 
 
 ### <i>help</i>
