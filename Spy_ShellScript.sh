@@ -1,7 +1,6 @@
 #!/bin/bash -i
 #
 dontRemoveThisVar="SpyShell"
-
 #color variables
 red='\033[0;31m'
 boldRED='\033[1;31m'
