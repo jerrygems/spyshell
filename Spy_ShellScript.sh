@@ -33,12 +33,7 @@ confirm_exit(){
         exit
     fi
 }
-spy(){
-    FILE=$(find /home /root /usr/bin -name asciivars.sh -exec grep -q "SpyShell" {} \; -print -quit)
-    source ${FILE}
-    while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
 
-}
 
 echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
 
@@ -60,9 +55,9 @@ do
 
             echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
             echo -n -e "${boldRED}"
-            spy
-            spy
-            spy
+            while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
+            while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
+            while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
             figlet -f small.flf "${cmd} $(whoami)"
             echo -n -e "${nc}"
         elif [[ ${cmd} == "initfun" || ${cmd} == "InitFun" || ${cmd} == "ini" || ${cmd} == "INITFUN" ]]
