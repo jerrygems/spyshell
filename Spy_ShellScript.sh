@@ -41,7 +41,6 @@ while :
 do
 
         #easy life things
-
         name=$(whoami)
         prompt=$'\033[1;33m;-)\033[0m\033[1;31m'${name}$'\033[0m\033[1;34m@'$(hostname)$'\033[0m\033[1;32m>>\033[0m\033[1;31m🕸️ \033[0m';
         echo -n -e "${blue}"
@@ -53,81 +52,114 @@ do
         if [[ ${cmd} == "hello" ]]
         then
 
-                echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
-                echo -n -e "${boldRED}"
-                while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
-                while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
-                while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
-                figlet -f small.flf "${cmd} $(whoami)"
-                echo -n -e "${nc}"
+			echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
+			echo -n -e "${boldRED}"
+			while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
+			while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
+			while :; do clear;echo -e "${first}" ; sleep 0.1;clear; echo -e "${second}" ; sleep 0.1;clear; echo -e "${third}" ; sleep 0.1;clear; echo -e "${fourth}" ; sleep 0.1; break; done;
+			figlet -f small.flf "${cmd} $(whoami)"
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "initfun" || ${cmd} == "InitFun" || ${cmd} == "ini" || ${cmd} == "INITFUN" ]]
         then
-                echo -n -e "${purple}"
-                eval FILE=$(find /home /root /usr/bin -name initfun.sh -exec grep -q "SpyShell" {} \; -print -quit)
-                echo -n -e "${nc}"
+			echo -n -e "${purple}"
+			eval FILE=$(find /home /root /usr/bin -name initfun.sh -exec grep -q "SpyShell" {} \; -print -quit)
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
         then
-                FILE=$(find /home /root /usr/bin -name asciivars.sh -exec grep -q "SpyShell" {} \; -print -quit)
-                source ${FILE}
-                echo -n -e "${boldRED}"
-                echo -e "${sixth}"
-                echo -n -e "${nc}"
+			FILE=$(find /home /root /usr/bin -name asciivars.sh -exec grep -q "SpyShell" {} \; -print -quit)
+			source ${FILE}
+			echo -n -e "${boldRED}"
+			echo -e "${sixth}"
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "time" ]]
         then
-                echo -n -e "${purple}"
-                date | awk '{print $4,$5,$6}' | figlet
-                echo -n -e "${nc}"
+			echo -n -e "${purple}"
+			date | awk '{print $4,$5,$6}' | figlet
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "date" ]]
         then
-                echo -n -e "${purple}"
-                date | awk '{print $3,$2,$7}' | figlet
-                echo -n -e "${nc}"
+			echo -n -e "${purple}"
+			date | awk '{print $3,$2,$7}' | figlet
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "whoami" ]]
         then
-                echo -n -e "${purple}"
-                ${cmd} | figlet
-                echo -n -e "${nc}"
+			echo -n -e "${purple}"
+        	${cmd} | figlet
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "hostname" ]]
         then
-                echo -n -e "${purple}"
-                ${cmd} | figlet
-                echo -n -e "${nc}"
+			echo -n -e "${purple}"
+			${cmd} | figlet
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "exit" || ${cmd} == "bye" ]]
         then
-                echo -n -e "${boldRED}"
-                figlet -f small.flf "good bye $(whoami)"
-                exit
-                echo -n -e "${nc}"
+			echo -n -e "${boldRED}"
+			figlet -f small.flf "good bye $(whoami)"
+			exit
+			echo -n -e "${nc}"
         elif [[ ${cmd} == "grabip" ]]
         then
-                #print colored output2>/dev/null && ${cmd} 2>spyshell.log
-                echo -n -e "${boldRED}"
-                ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
-                echo -n -e "${nc}"
-        elif [[ ${cmd} == "spylistner" ]]
-        then
-                echo "spylistner will be here" | figlet
-        elif [[ ${cmd} == "COT" ]]
-        then
-                echo "chat over terminal" | figlet
-        elif [[ ${cmd} == "bash-compline" ]]
-        then
-                echo "bash completion without tab" | figlet
-        elif [[ ${cmd} == "koth setup" ]]
-        then
-                echo "starting koth setup" | figlet
-                #koth automation
-        elif [[ ${cmd} == "hello-friend" ]]
-        then
-                read -e -r -p "enter path of ovpn file : " path
-                nohup sudo openvpn ${path} 2>/dev/null &
-        elif [[ ${cmd} ]]
-        then
-                #print colored output2>/dev/null && ${cmd} 2>spyshell.log
-                echo -n -e "${purple}"
-                eval "${cmd}"
-                echo -n -e "${nc}"
-        fi
+            	#print colored output2>/dev/null && ${cmd} 2>spyshell.log
+        	echo -n -e "${boldRED}"
+        	ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
+        	echo -n -e "${nc}"
+	elif [[ ${cmd} == "whereami" ]]
+	then
+			echo -n -e "${boldRED}"
+			eval "pwd | figlet -f 'smbraille.flf'"
+			echo -n -e "${nc}"
+	elif [[ ${cmd} == "whichDistro" ]]
+	then
+			echo -n -e "${blue}"
+			uname | figlet -f "small.flf"
+			cat /etc/os-release | grep --color=never -w "NAME"
+			cat /etc/os-release | grep --color=never -w "VERSION"
+			lscpu | tr -s " " | grep --color=never -w "Architecture"
+			echo -n -e "CPU:"
+			lscpu | tr -s " " | grep --color=never -w "Model name:"
+			echo -n -e "Kernel:"
+			eval "uname -r"
+		
+			echo -n -e "${nc}"
+	elif [[ ${cmd} == "binAnalyzer" ]]
+	then
+			echo -n -e "${red}"
+			echo "Analyzing binary..." | figlet -f "small.flf"
+			echo -n -e "${nc}"
+	elif [[ ${cmd} == "crackIt" ]]
+	then
+			echo -n -e "${purple}"
+			echo "crackIt" | figlet -f "small.flf"
+			echo -n -e "${nc}"
+	elif [[ ${cmd} == "themeDefault" ]]
+	then
+			echo -n -e "${purple}"
+			eval themes/defaultTheme
+			echo -n -e "${nc}"
+	elif [[ ${cmd} == "spylistner" ]]
+	then
+			echo "spylistner will be here" | figlet
+	elif [[ ${cmd} == "COT" ]]
+	then
+			echo "chat over terminal" | figlet
+	elif [[ ${cmd} == "bash-compline" ]]
+	then
+			echo "bash completion without tab" | figlet
+	elif [[ ${cmd} == "koth setup" ]]
+	then
+			echo "starting koth setup" | figlet
+	#koth automation
+	elif [[ ${cmd} == "hello-friend" ]]
+	then
+			read -e -r -p "enter path of ovpn file : " path
+			nohup sudo openvpn ${path} 2>/dev/null &
+	elif [[ ${cmd} ]]
+	then
+			#print colored output2>/dev/null && ${cmd} 2>spyshell.log
+			echo -n -e "${purple}"
+			eval "${cmd}"
+			echo -n -e "${nc}"
+	fi
 
 
 done
