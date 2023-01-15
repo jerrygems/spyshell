@@ -1,7 +1,8 @@
 #!/bin/bash
 dontRemoveThisVar="SpyShell"
 echo "<----------installing in background, Have some popcorns till then---------->"
-run="sudo apt install nyancat && sudo apt install sl && sudo apt install cmatrix && sudo apt install figlet && sudo apt install rlwrap" 
+run="sudo apt install nyancat && sudo apt install sl && sudo apt install cmatrix && sudo apt install figlet && sudo apt install rlwrap && sudo apt install toilet-fonts
+" 
 eval ${run} &> /dev/null &
 
 pid=$!
