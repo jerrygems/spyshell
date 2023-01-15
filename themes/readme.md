@@ -1,1 +1,2 @@
-hell themes will be in this dir
+# tmux themes are here
+### this is just to make tmux arrangements a bit quicker
