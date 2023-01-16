@@ -291,7 +291,7 @@ do
 			#print colored output2>/dev/null && ${cmd} 2>spyshell.log
 			echo -n -e "${purple}"
 			eval "${cmd}"
-			#echo -n -e "${nc}"
+			echo -n -e "${nc}"
 	fi	
 
 
