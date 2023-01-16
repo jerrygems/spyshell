@@ -49,4 +49,4 @@ to use spyshell just execute the file without any flag${nc}
         esac
 done
 FILE=$(find /home /root /usr/bin -name Spy_ShellScript.sh -exec grep -q "SpyShell" {} \; -print -quit)
-rlwrap ${FILE}
+rlwrap --no-warning ${FILE}
