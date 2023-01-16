@@ -152,14 +152,15 @@ confirm_exit(){
 }
 
 
-echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
+echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell try any command like \"hello\"${nc}"
 
 while :
 do
 
         #easy life things
         name=$(whoami)
-        prompt=$'\033[1;33m;-)\033[0m\033[1;31m'${name}$'\033[0m\033[1;34m@'$(hostname)$'\033[0m\033[1;32m>>\033[0m\033[1;31m🕸️ \033[0m';
+        extVar=" in "
+        prompt=$'\033[1;33m;-)\033[0m\033[1;31m'${name}$'\033[0m\033[1;34m@'$(hostname)$'\033[0m\033[1;32m'${extVar}$'\033[0;34m'$(pwd)$'\033[0m\033[0;35m>>\033[0m\033[1;31m🕸️ \033[0m';
         echo -n -e "${blue}"
         read -i -e -p "${prompt} " cmd
         history -s ${cmd}
@@ -218,13 +219,13 @@ do
         	echo -n -e "${boldRED}"
         	ifconfig | grep -E "inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | awk '{print $1,$2}' | figlet -f small.flf
         	echo -n -e "${nc}"
-	elif [[ ${cmd} == "whereami" ]]
-	then
+		elif [[ ${cmd} == "whereami" ]]
+		then
 			echo -n -e "${boldRED}"
 			eval "pwd | figlet -f 'smbraille.flf'"
 			echo -n -e "${nc}"
-	elif [[ ${cmd} == "whichDistro" ]]
-	then
+		elif [[ ${cmd} == "whichDistro" ]]
+		then
 			echo -n -e "${blue}"
 			uname | figlet -f "small.flf"
 			cat /etc/os-release | grep --color=never -w "NAME"
@@ -236,62 +237,62 @@ do
 			eval "uname -r"
 		
 			echo -n -e "${nc}"
-	elif [[ ${cmd} == "SplitV" ]]
-        then
-	    		echo -n -e "${purple}"
-		    	tmux split-window -v -c "./" "./SpyShell.sh"
-		    	tmux set -g mouse on
-		    	echo -n -e "${nc}"
-    	elif [[ ${cmd} == "SplitH" ]]
+		elif [[ ${cmd} == "SplitV" ]]
     	then
-		    	echo -n -e "${purple}"
-		    	tmux split-window -h -c "./" "./SpyShell.sh"
-		    	echo -n -e "${nc}"
-	    elif [[ ${cmd} == "tmux" ]]
-	    then
-		    	echo -n -e "${purple}"
-		    	tmux new-session -n "SpyShell" "$(which SpyShell.sh)"
-		    	echo -n -e "${nc}"
+    		echo -n -e "${purple}"
+	    	tmux split-window -v -c "./" "./SpyShell.sh"
+	    	tmux set -g mouse on
+	    	echo -n -e "${nc}"
+		elif [[ ${cmd} == "SplitH" ]]
+		then
+	    	echo -n -e "${purple}"
+	    	tmux split-window -h -c "./" "./SpyShell.sh"
+	    	echo -n -e "${nc}"
+    	elif [[ ${cmd} == "tmux" ]]
+    	then
+	    	echo -n -e "${purple}"
+	    	tmux new-session -n "SpyShell" "$(dirname "$0")/SpyShell.sh"
+	    	echo -n -e "${nc}"
 
-	elif [[ ${cmd} == "binAnalyzer" ]]
-	then
+		elif [[ ${cmd} == "binAnalyzer" ]]
+		then
 			echo -n -e "${red}"
 			echo "Analyzing binary..." | figlet -f "small.flf"
 			echo -n -e "${nc}"
-	elif [[ ${cmd} == "crackIt" ]]
-	then
+		elif [[ ${cmd} == "crackIt" ]]
+		then
 			echo -n -e "${purple}"
 			echo "crackIt" | figlet -f "small.flf"
 			echo -n -e "${nc}"
-	elif [[ ${cmd} == "themeDefault" ]]
-	then
+		elif [[ ${cmd} == "themeDefault" ]]
+		then
 			echo -n -e "${purple}"
-			eval themes/defaultTheme
+			eval themes/mt/defaultTheme
 			echo -n -e "${nc}"
-	elif [[ ${cmd} == "spylistner" ]]
-	then
+		elif [[ ${cmd} == "spylistner" ]]
+		then
 			echo "spylistner will be here" | figlet
-	elif [[ ${cmd} == "COT" ]]
-	then
+		elif [[ ${cmd} == "COT" ]]
+		then
 			echo "chat over terminal" | figlet
-	elif [[ ${cmd} == "bash-compline" ]]
-	then
+		elif [[ ${cmd} == "bash-compline" ]]
+		then
 			echo "bash completion without tab" | figlet
-	elif [[ ${cmd} == "koth setup" ]]
-	then
+		elif [[ ${cmd} == "koth setup" ]]
+		then
 			echo "starting koth setup" | figlet
-	#koth automation
-	elif [[ ${cmd} == "hello-friend" ]]
-	then
+		#koth automation
+		elif [[ ${cmd} == "hello-friend" ]]
+		then
 			read -e -r -p "enter path of ovpn file : " path
 			nohup sudo openvpn ${path} 2>/dev/null &
-	elif [[ ${cmd} ]]
-	then
+		elif [[ ${cmd} ]]
+		then
 			#print colored output2>/dev/null && ${cmd} 2>spyshell.log
 			echo -n -e "${purple}"
 			eval "${cmd}"
 			#echo -n -e "${nc}"
-	fi
+		fi	
 
 
 done
