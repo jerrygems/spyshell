@@ -1,5 +1,5 @@
 #!/bin/bash -i
-#
+
 dontRemoveThisVar="SpyShell"
 #color variables
 red='\033[0;31m'
@@ -236,6 +236,23 @@ do
 			eval "uname -r"
 		
 			echo -n -e "${nc}"
+	elif [[ ${cmd} == "SplitV" ]]
+        then
+	    		echo -n -e "${purple}"
+		    	tmux split-window -v -c "./" "./SpyShell.sh"
+		    	tmux set -g mouse on
+		    	echo -n -e "${nc}"
+    	elif [[ ${cmd} == "SplitH" ]]
+    	then
+		    	echo -n -e "${purple}"
+		    	tmux split-window -h -c "./" "./SpyShell.sh"
+		    	echo -n -e "${nc}"
+	    elif [[ ${cmd} == "tmux" ]]
+	    then
+		    	echo -n -e "${purple}"
+		    	tmux new-session -n "SpyShell" "$(which SpyShell.sh)"
+		    	echo -n -e "${nc}"
+
 	elif [[ ${cmd} == "binAnalyzer" ]]
 	then
 			echo -n -e "${red}"
