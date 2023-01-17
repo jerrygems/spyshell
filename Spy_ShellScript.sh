@@ -204,7 +204,7 @@ do
 			echo -n -e "${purple}"
 			eval FILE=$(find /home /root /usr/bin -name initfun.sh -exec grep -q "SpyShell" {} \; -print -quit)
 			echo -n -e "${nc}"
-        c
+        elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
         then
 			echo -n -e "${boldRED}"
 			echo -e "${sixth}"
