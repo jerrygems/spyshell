@@ -144,10 +144,14 @@ HISTFILESIZE=2000
 #confirm_exit function
 trap 'confirm_exit' 2
 confirm_exit(){
+    echo -e -n "${blue}"
     read -r -p "Are you sure you want to exit? (y/n) " confirm
+    echo -e -n "${nc}"
     if [ "$confirm" = "y" ]; then
-        echo "Exiting the script"
+        echo -n -e "${blue}Exiting the script${nc}"
         exit
+    else
+    	echo -n -e "${blue}Cancled${nc}"
     fi
 }
 
