@@ -155,6 +155,24 @@ confirm_exit(){
     fi
 }
 
+#here mr.robot
+mr_robot(){
+	clear
+	echo "3" | figlet
+	sleep 1
+	echo "2" | figlet
+	sleep 1
+	clear
+	echo "1" | figlet
+	sleep 1
+	clear
+	echo "Mr.Robot aka 'Elliot Alderson'" | figlet
+	sleep 1
+	clear
+	
+	
+	
+}
 
 echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell try any command like \"hello\"${nc}"
 
@@ -186,7 +204,7 @@ do
 			echo -n -e "${purple}"
 			eval FILE=$(find /home /root /usr/bin -name initfun.sh -exec grep -q "SpyShell" {} \; -print -quit)
 			echo -n -e "${nc}"
-        elif [[ ${cmd} == "spidey" || ${cmd} == "spy" || ${cmd} == "sp1d3y" ]]
+        c
         then
 			echo -n -e "${boldRED}"
 			echo -e "${sixth}"
@@ -257,7 +275,11 @@ do
 	    		echo -n -e "${purple}"
 	    		tmux new-session -n "SpyShell" "$(dirname "$0")/SpyShell.sh"
 	    		echo -n -e "${nc}"
-
+	elif [[ ${cmd} == "MRROBOT" || ${cmd} == "mr.robot" || ${cmd} == "mrrobot" || ${cmd} == "MrRobot" || ${cmd} == "Mr.Robot" || ${cmd} == "elliot" || ${cmd} == "ELLIOT" ]]
+	then
+			echo -n -e "${purple}"
+			mr_robot
+			echo -n -e "${nc}"
 	elif [[ ${cmd} == "binAnalyzer" ]]
 	then
 			echo -n -e "${red}"
