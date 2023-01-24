@@ -173,6 +173,46 @@ mr_robot(){
 	
 	
 }
+#here riddler
+
+riddler(){
+	arr=("I am always hungry, \nI must always be fed. \nThe finger I touch, \nwill soon turn red. \nWhat am I ?" "I am something you cannot touch, \nbut I can be found in every byte. \nWhat am I ?" "I am a code, \na set of instructions. \nI can be executed, \nbut I can't be touched. \nWhat am I ?" "I am a part of your computer, \nbut I am not a hardware. \nI can be found on every computer, \nbut can't be seen. \nWhat am I ?" "I am a key, \nbut not physical. \nI can unlock secrets, \nbut I can't be touched. \nWhat am I ?" "I am a code, \nbut not a script. \nI can be cracked, \nbut I can't be seen. \nWhat am I ?" "I am a network, \nbut not physical. \nI can connect you to the world, \nbut I can't be touched. \nWhat am I ?" "I can protect, \nbut I can also be broken. \nI am stronger than a lock, \nbut weaker than a key. \nWhat am I ?" "I am a tool, \nbut not a weapon. \nI can find vulnerabilities, \nbut I can't be used to attack. \nWhat am I ?" "I am a defense, \nbut not a wall. \nI can stop attacks, \nbut I can't be seen. \nWhat am I ?" "I can steal your identity, \nbut I'm not a thief. \nI can access your accounts, \nbut I can't be touched. \nWhat am I ?" "I can make you anonymous, \nbut I'm not a cloak. \nI can hide your IP, \nbut I can't be seen. \nWhat am I ?" "I can stop intruders, \nbut I'm not a guard. \nI can detect and respond to threats, \nbut I can't be touched. \nWhat am I ?" "I can prevent data breaches, \nbut I'm not a lock. \nI can encrypt and decrypt, \nbut I can't be touched. \nWhat am I ?" "I am a defense, \nbut not a shield. \nI can protect against malware, \nbut I can't be seen. \nWhat am I ?" "I am a code, \nbut not a script. \nI can be cracked, \nbut I can't be touched. \nWhat am I ?")
+	arr1=("I am the beginning of the end, \nthe end of every place. \nI am the beginning of eternity, \nthe end of time and space. \nWhat am I ?" "I am not alive, \nbut I grow. \I don't have lungs, \but I need air. \nI don't have a mouth, \nbut water kills me. \nWhat am I ?" "I am taken from a mine, \nand shut up in a wooden case, \nfrom which I am never released, \nand yet I am used by almost every person. \nWhat am I?" "I can be cracked, \nmade, \ntold, \nand played. \nWhat am I?" "I am light as a feather, \nbut not even the strongest man can hold me for long. \nWhat am I?" "I am taken from a man, \nbut never borrowed. \nAnd though I am always with you, \nyou are never with me. \nWhat am I?" "I am an odd number. \nTake away a letter, \nand I become even. \nWhat number am I?" "I am a question that always has an answer, but you may never know what it is. I am the mystery that always needs solving, the puzzle that always needs piecing together. What am I? "
+ "I am a symbol that is often associated with intelligence and knowledge, \nbut can also be the sign of deceit and manipulation. \nI am the clue that leads to the truth, \nbut also the trap that leads to downfall. \nWhat am I?"
+ "I am an enigma that always needs solving, \na mystery that always needs uncovering. \nI am the challenge that always needs overcoming, \nthe puzzle that always needs solving. \nWhat am I?"
+ "I am a word that is often associated with cleverness and wit, \nbut can also be the source of confusion and frustration. \nI am the key to unlock the truth, \nbut also the barrier to understanding. \nWhat am I?"
+ "I am a symbol that can be a sign of intelligence and knowledge, \nbut also a sign of madness and obsession. \nI am the puzzle that needs solving, \nthe mystery that needs uncovering. \nWhat am I?"
+ "I am a challenge that is always waiting for you, \nthe answer is there but you might not be able to see it. \nI am the game you play to prove you're smart, \na test of intelligence that you need to pass. \nWhat am I? ."
+ "I am a challenge that is always waiting for you, \nthe answer is there but you might not be able to see it. \nI am the game you play to prove you're smart, \na test of intelligence that you need to pass. \nWhat am I?")
+ 
+	echo -e "${blue}"
+	echo -e "wanna play as a techie or the real riddler? \n"
+	read -p "TheRiddler(rid)/hacker /,-) " ny
+    echo -e "${nc}"
+	
+	if [[ ${ny} == "hacker" || ${ny} == "hack" ]]
+	then
+		echo -e "${blue}"
+	    echo -e "${arr[$((RANDOM % ${#arr[@]}))]}" | figlet -f "mini.flf"	
+	    echo -e "${nc}"
+	elif [[ ${ny} == "rid" || ${ny} == "TheRiddler" ]]
+	then
+	    echo -e "${blue}"
+	    echo -e "${arr1[$((RANDOM % ${#arr1[@]}))]}" | figlet -f "mini.flf"	
+	    echo -e "${nc}"
+    else
+        echo -e "${red}"
+        echo -e "I am a question with multiple options,\nBut only one leads to the right conclusions,\nSo choose wisely, \ndon't be in a hurry,\nThe right choice will make your future less blurry.\nWhat am I?"
+        echo -e "${nc}"
+	fi
+	
+	
+	
+	
+}
+
+#end of riddler
+
 
 echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell try any command like \"hello\"${nc}"
 
@@ -280,6 +320,13 @@ do
 			echo -n -e "${purple}"
 			mr_robot
 			echo -n -e "${nc}"
+	elif [[ ${cmd} == "riddler" || ${cmd} == "RID" || ${cmd} == "rid" ]]
+	then
+			echo -n -e "${purple}"
+			echo "Riddler" | figlet -f "slant.flf"
+			echo "Let your Devil play..."
+			echo -n -e "${nc}"
+			riddler
 	elif [[ ${cmd} == "binAnalyzer" ]]
 	then
 			echo -n -e "${red}"
