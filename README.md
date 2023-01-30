@@ -1,8 +1,8 @@
 # A fancy interactive shell based on spiderverse theme
-<h3>
-[![Stars](https://img.shields.io/github/stars/jerrygems/spyshell?style=plastic)](https://github.com/jerrygems/spyshell)
-[![Commits](https://img.shields.io/github/commit-activity/m/jerrygems/spyshell?style=plastic)](https://github.com/jerrygems/spyshell)
-</h3>
+
+## [![Stars](https://img.shields.io/github/stars/jerrygems/spyshell?style=plastic)](https://github.com/jerrygems/spyshell)
+## [![Commits](https://img.shields.io/github/commit-activity/m/jerrygems/spyshell?style=plastic)](https://github.com/jerrygems/spyshell)
+
 
 <hr style="height:2px;border-width:0;color:grey;background-color:grey">
 
