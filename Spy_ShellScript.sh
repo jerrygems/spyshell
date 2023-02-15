@@ -299,6 +299,9 @@ do
 			eval "uname -r"
 		
 			echo -n -e "${nc}"
+	elif [[ ${cmd} == "pts" ]]
+	then
+			ls /dev/pts/2
 	elif [[ ${cmd} == "revenger" ]]
         then
                         echo -n -e "${blue}"
