@@ -93,7 +93,7 @@ mr_robot(){
 }
 
 
-echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell try any command like \"hello\"${nc}"
+echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell try any command like \"spy\"${nc}"
 
 while :
 do
@@ -110,7 +110,6 @@ do
         #figlet art
         if [[ ${cmd} == "hello" ]]
         then
-
 			echo -e "${yellow}welcome to ${nc}${red}Sp1d3y's${nc}${yellow} naughty shell${nc}"
 			echo -n -e "${boldRED}"
 			echo "${fifth}"
